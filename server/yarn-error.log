@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add knex:migrate
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: knex:migrate: Invalid protocol: knex:
+      at Request.module.exports.Request.init (/usr/share/yarn/lib/cli.js:141017:31)
+      at new Request (/usr/share/yarn/lib/cli.js:140690:8)
+      at request (/usr/share/yarn/lib/cli.js:137596:10)
+      at RequestManager.execute (/usr/share/yarn/lib/cli.js:67039:15)
+      at RequestManager.shiftQueue (/usr/share/yarn/lib/cli.js:67077:10)
+      at /usr/share/yarn/lib/cli.js:66746:13
+      at new Promise (<anonymous>)
+      at new F (/usr/share/yarn/lib/cli.js:5301:28)
+      at RequestManager.request (/usr/share/yarn/lib/cli.js:66744:19)
+      at NpmRegistry.<anonymous> (/usr/share/yarn/lib/cli.js:31704:42)
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "tsnd --transpile-only --ignore-watch node-modules --respawn src/server.ts",
+      "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+      "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/express": "^4.17.7",
+      "ts-node-dev": "^1.0.0-pre.60",
+      "typescript": "^4.0.2"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "knex": "^0.21.5",
+      "sqlite3": "^5.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
